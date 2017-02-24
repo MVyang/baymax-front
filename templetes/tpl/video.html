@@ -1,0 +1,38 @@
+<!--父容器 定义侧边栏菜单-->
+<ion-side-menus>
+    <!--  中间内容 正文 -->
+    <ion-side-menu-content>
+        <ion-header-bar class="bar-royal">
+            <button class="button button-icon icon ion-refresh" ng-click="openLeftSideMenu()"></button>
+            <h1 class="title">Header</h1>
+        </ion-header-bar>
+        <ion-content>
+            <button menu-toggle="left" class="button button-royal">
+                toggle
+            </button>
+        </ion-content>
+        <ion-footer-bar class="bar-balanced">
+            <h1 class="title">footer</h1>
+        </ion-footer-bar>
+    </ion-side-menu-content>
+
+    <!-- 左边 侧边栏菜单-->
+    <ion-side-menu side="left">
+        <ul>
+            <li><a href="">个人中心</a></li>
+            <li><a href="">设置</a></li>
+            <li><a href="">更新</a></li>
+        </ul>
+    </ion-side-menu>
+
+</ion-side-menus>
+
+
+
+
+
+
+
+
+
+
