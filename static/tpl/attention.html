@@ -1,1 +1,104 @@
-<h2>我的关注</h2>
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Egg</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="../css/ionic.css"/>
+    <link rel="stylesheet" href="../css/video.css"/>
+    <script src="../js/ionic.bundle.js"></script>
+</head>
+<body ng-controller="attentionCtrl">
+<!--父容器 定义侧边栏菜单-->
+<ion-side-menus>
+    <!--  中间内容 正文 -->
+    <ion-side-menu-content>
+        <!--固定头部-->
+        <ion-header-bar class="bar-positive">
+            <button class="button button-icon icon ion-person" ng-click=""></button>
+            <h4 class="title">我的关注</h4>
+            <button class="button button-icon icon ion-android-menu" ng-click=""></button>
+        </ion-header-bar>
+        <!--内容-->
+        <ion-content>
+            <div class="list">
+                <a class="item item-avatar" href="video.html">
+                    <img src="../img/p7818.jpg">
+                    <h2>Venkman</h2>
+                    <p>Back off, man. I'm a scientist.</p>
+                </a>
+
+
+            </div>
+        </ion-content>
+        <!--固定底部-->
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item" href="hot.html">
+                <i class="icon ion-ios-flame" style="color: red"></i>
+                最热
+            </a>
+            <a class="tab-item" href="shoot.html">
+                <i class="icon ion-film-marker" style="color: #000"></i>
+                拍摄
+            </a>
+            <a class="tab-item" href="dynamic.html">
+                <i class="icon ion-star" style="color: #F0D340"></i>
+                动态
+            </a>
+        </div>
+    </ion-side-menu-content>
+
+    <!-- 左边 侧边栏菜单-->
+    <ion-side-menu side="left">
+        <!--用户名-->
+        <div class="list">
+            <a class="item item-avatar" href="">
+                <img src="../img/p2679.jpg" alt=""/>
+                <h2>M.yang</h2>
+                <p>ack off, man. I'm a scientist.</p>
+            </a>
+        </div>
+        <!--设置-->
+        <div class="list">
+            <a href="attention.html" class="item item-icon-left">
+                <i class="ion ion-heart "></i>
+                我的关注
+            </a>
+            <a href="" class="item item-icon-left">
+                <i class="ion ion-android-color-palette"></i>
+                个性装扮
+            </a>
+            <a href="" class="item item-icon-left">
+                <i class="ion ion-videocamera"></i>
+                我的视频
+            </a>
+            <a href="" class="item item-icon-left">
+                <i class="ion ion-film-marker"></i>
+                我的收藏
+            </a>
+            <a href="" class="item item-icon-left">
+                <i class="ion ion-ios-camera"></i>
+                我的相册
+            </a>
+            <a href="" class="item item-icon-left">
+                <i class="ion ion-android-settings"></i>
+                设置
+            </a>
+        </div>
+    </ion-side-menu>
+</ion-side-menus>
+
+<script>
+    var app = angular.module('myApp', ['ionic']);
+
+    app.controller('attentionCtrl', ['$scope','$ionicSideMenuDelegate',
+        function($scope,$ionicSideMenuDelegate){
+            $scope.openLeftSideMenu = function(){
+                $ionicSideMenuDelegate.toggleLeft();
+            }
+        }]);
+
+</script>
+
+</body>
+</html>

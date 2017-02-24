@@ -1,1 +1,61 @@
-<h2>最热管理</h2>
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Egg</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="../css/ionic.css"/>
+    <link rel="stylesheet" href="../css/hot.css"/>
+    <script src="../js/ionic.bundle.js"></script>
+</head>
+<body>
+<!--父容器 定义侧边栏菜单-->
+<ion-side-menus>
+    <!--  中间内容 正文 -->
+    <ion-side-menu-content>
+        <!--固定头部-->
+        <ion-header-bar class="bar-positive">
+            <button class="button button-icon icon ion-arrow-left-c" ng-click=""></button><!--前进一页-->
+            <h4 class="title">好友列表</h4>
+            <button class="button button-icon icon ion-plus-round" ng-click=""></button><!--发布视频-->
+        </ion-header-bar>
+        <!--内容-->
+        <ion-content>
+            <div class="list">
+                <a class="item item-thumbnail-left" href="video.html">
+                    <img src="../img/p2679.jpg">
+                    <h2>Pretty Hate</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at atque autem consequu</p>
+                </a>
+                <a class="item item-thumbnail-left" href="">
+                    <img src="../img/p7818.jpg">
+                    <h2>Pretty Hate</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at atque autem consequu</p>
+                </a>
+                <a class="item item-thumbnail-left" href="#">
+                    <img src="../img/p0281.jpg">
+                    <h2>Pretty Hate</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at atque autem consequu</p>
+                </a>
+                <a class="item item-thumbnail-left" href="#">
+                    <img src="../img/p2679.jpg">
+                    <h2>Pretty Hate</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at atque autem consequu</p>
+                </a>
+            </div>
+        </ion-content>
+        <!--固定底部-->
+
+    </ion-side-menu-content>
+
+</ion-side-menus>
+
+<script>
+    var app = angular.module('myApp', ['ionic']);
+
+    /*声明控制器*/
+
+</script>
+
+</body>
+</html>

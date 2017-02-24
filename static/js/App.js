@@ -17,14 +17,17 @@ app.controller('sideMenuCtrl', ['$scope','$ionicSideMenuDelegate',
                     $ionicSideMenuDelegate.toggleRight();
                 }
         }]);*/
-var app = angular.module('myApp', ['ionic']);
+var app = angular.module('myApp', ['ionic','ngAnimate']);
 
 /*实现页面的跳转——设置路由*/
 app.config(function ($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
     //页面跳转
+    $ionicConfigProvider.tabs.position("bottom");
     $stateProvider.state('video',{
         url:'/video',
-        templateUrl:'tpl/video.html'
+        templateUrl:'tpl/video.html',
+        controller:'startCtrl'
+
 
     }).state('attention',{
         url:'/attention',
@@ -55,6 +58,17 @@ app.controller('parentCtrl',['$scope','$state','$ionicSideMenuDelegate','$ionicS
     $scope.jump= function (arg) {
         $state.go(arg);
     }
+}]);
+app.controller('startCtrl',['$scope','$timeout','$interval','$state', function ($scope, $timeout, $interval, $state) {
+    $scope.secondNumber=5;
+    $timeout(function () {
+        $state.go('video');
+    },5000);
+    $interval(function () {
+        if($scope.secondNumber>0)
+        $scope.secondNumber--;
+    },1000);
+    console.log(111);
 }]);
 app.controller('sideMenuCtrl', ['$scope','$ionicSideMenuDelegate',
     function($scope,$ionicSideMenuDelegate){
