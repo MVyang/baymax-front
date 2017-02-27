@@ -3,25 +3,167 @@
     <!--  中间内容 正文 -->
     <ion-side-menu-content>
         <ion-header-bar class="bar-royal">
-            <button class="button button-icon icon ion-refresh" ng-click="openLeftSideMenu()"></button>
-            <h1 class="title">Header</h1>
+            <button class="button button-icon icon ion-person" ng-click="openLeftSideMenu()"></button>
+            <div class="h1 title"></div>
+            <button class="button button-icon button-clear icon ion-android-menu" ng-click="openRightSideMenu()"></button>
         </ion-header-bar>
+
         <ion-content>
-            <button menu-toggle="left" class="button button-royal">
-                toggle
-            </button>
+
+            <div class="card">
+                <!--查询条件-->
+                <div class="item item-divider icon-left ion-star">
+                    查询条件
+                </div>
+                <div class="item item-text-wrap">
+                    <!--数据-->
+                    <div class="list">
+                            <label class="item item-input">
+                                <i class="icon ion-clock"></i>
+                                <span class="input-label">起始时间</span>
+                                <input type="date">
+                            </label>
+                            <label class="item item-input">
+                                <i class="icon ion-clock"></i>
+                                <span class="input-label">结束时间</span>
+                                <input type="date">
+                            </label>
+                            <label class="item item-input">
+                                <i class="icon ion-person"></i>
+                                <span class="input-label">用户名</span>
+                                <input type="text">
+                            </label>
+                            <label class="item item-input item-select">
+                                <i class="icon ion-eye"></i>
+                                <div class="input-label">
+                                    可见性
+                                </div>
+                                <select>
+                                    <option>全部</option>
+                                    <option>可见</option>
+                                    <option>不可见</option>
+                                </select>
+                        </label>
+                            <div class="list">
+                                <button class="button button-block button-calm">提交</button>
+                                <button class="button button-block button-positive">重置</button>
+                            </div>
+                    </div>
+                </div>
+                <!--查询结果-->
+                <div class="item item-divider icon-left ion-star">
+                    查询结果
+                </div>
+                <div class="item item-text-wrap">
+                    <!--动态添加的数据-->
+                    <div class="list card">
+                        <div class="item item-avatar">
+                            <img src="" alt=""/>
+                            <h2>用户名</h2>
+                            <p>2017-02-27 22-22-22</p>
+                        </div>
+
+                        <div class="item item-body">
+                            <video src=""></video>
+                            <p>
+                                这是一段奇妙之旅
+                            </p>
+                            <p>
+                                <b class="subdued">状态：false</b>
+                                <b style="float: right">
+                                    <select>
+                                        <option value="">skip</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                </b>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="list card">
+                        <div class="item item-avatar">
+                            <img src="" alt=""/>
+                            <h2>用户名</h2>
+                            <p>2017-02-27 22-22-22</p>
+                        </div>
+
+                        <div class="item item-body">
+                            <video src=""></video>
+                            <p>
+                                这是一段奇妙之旅
+                            </p>
+                            <p>
+                                <b class="subdued">状态：false</b>
+                                <b style="float: right">
+                                    <select>
+                                        <option value="">skip</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                </b>
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
         </ion-content>
-        <ion-footer-bar class="bar-balanced">
-            <h1 class="title">footer</h1>
+        <!--footer-->
+        <ion-footer-bar class="bar-dark">
+                <label class="button" for="all"><input type="checkbox" id="all"/>全选</label>
+                <label class="button" for="in" ><input type="radio" id="in" name="0"/>可见</label>
+                <label class="button" for="out"><input type="radio" id="out" name="0"/>不可见</label>
+                <label class="button">提交</label>
         </ion-footer-bar>
     </ion-side-menu-content>
 
     <!-- 左边 侧边栏菜单-->
     <ion-side-menu side="left">
+        <div class="bar bar-header bar-dark">
+            <h1 class="title">个人中心</h1>
+        </div>
+        <div class="list">
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-email"></i>
+                Check mail
+            </a>
+            <a class="item item-avatar" href="#">
+                <img src="../templetes/img/p2679.jpg">
+                <h2>Venkman</h2>
+                <p>Back off, man. I'm a scientist.</p>
+            </a>
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-person-stalker"></i>
+                Friends
+                <span class="badge badge-assertive">0</span>
+            </a>
+            <a href="" class="item item-icon-left">
+                <i class="icon ion-gear-a"></i>
+                注销
+            </a>
+        </div>
+    </ion-side-menu>
+    <!--右侧菜单栏-->
+    <ion-side-menu side="right">
         <ul>
-            <li><a href="">个人中心</a></li>
-            <li><a href="">设置</a></li>
-            <li><a href="">更新</a></li>
+            <li><a class="button button-block button-royal">最新管理</a></li>
+            <li><a class="button button-block button-royal">最热管理</a></li>
+            <li><a class="button button-block button-royal">用户推荐管理</a></li>
+            <li><a class="button button-block button-royal">白名单管理</a></li>
         </ul>
     </ion-side-menu>
 

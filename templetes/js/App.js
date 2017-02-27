@@ -41,7 +41,10 @@ app.controller('loadCtrl',['$scope',function($scope){
 app.controller('videoCtrl',['$scope','$ionicSideMenuDelegate',function($scope,$ionicSideMenuDelegate){
     $scope.openLeftSideMenu = function(){
         $ionicSideMenuDelegate.toggleLeft();
-    }
+    },
+        $scope.openRightSideMenu= function () {
+            $ionicSideMenuDelegate.toggleRight();
+        }
 }]);
 
 
