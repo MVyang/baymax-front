@@ -38,13 +38,45 @@ app.controller('loadCtrl',['$scope',function($scope){
 
 }]);
 /*video Controller*/
-app.controller('videoCtrl',['$scope','$ionicSideMenuDelegate',function($scope,$ionicSideMenuDelegate){
+app.controller('videoCtrl',['$scope','$ionicSideMenuDelegate','$http','$timeout',function($scope,$ionicSideMenuDelegate,$http,$timeout){
     $scope.openLeftSideMenu = function(){
         $ionicSideMenuDelegate.toggleLeft();
-    },
-        $scope.openRightSideMenu= function () {
-            $ionicSideMenuDelegate.toggleRight();
+    };
+    $scope.openRightSideMenu= function () {
+        $ionicSideMenuDelegate.toggleRight();
+    };
+    //设置默认时间
+    $scope.startDate=new Date(2017,0,1);
+    $scope.endDate=function (){
+        var AddDayCount=1;
+        var dd = new Date();
+        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期
+        var y = dd.getFullYear();
+        var m = dd.getMonth()+1;//获取当前月份的日期
+        if (m >= 1 && m <= 9) {
+            m = "0" + m;
         }
+        var d = dd.getDate();
+        if (d >= 0 && d <= 9) {
+            d = "0" + d;
+        }
+        return y+"-"+m+"-"+d;
+    };
+    $scope.hasMore=true;
+    //用户名
+    $scope.userName="";
+    //可见性
+    $scope.select="all";
+    //起始页
+    $scope.curson_id=1;
+
+    //获取初始的新闻数据
+    /*$http.get().success();*/
+
+
+
+
+
 }]);
 
 
